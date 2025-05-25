@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Baby shower Eizo Alessandro</title>
+    <title>Baby shower Ezio Alessandro</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
@@ -14,11 +14,11 @@
         rel="stylesheet" />
 
     <!-- Open Graph Meta -->
-    <meta property="og:title" content="Baby shower Eizo Alessandro">
-    <meta property="og:description" content="¡Te invitamos a celebrar el Baby Shower de Eizo Alessandro!">
-    <meta property="og:image" content="https://giftclick.github.io/eizo/ring.png">
+    <meta property="og:title" content="Baby shower Ezio Alessandro">
+    <meta property="og:description" content="¡Te invitamos a celebrar el Baby Shower de Ezio Alessandro!">
+    <meta property="og:image" content="https://giftclick.github.io/ezio/2.jpg">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://giftclick.github.io/eizo/index.html">
+    <meta property="og:url" content="https://giftclick.github.io/ezio/index.html">
 </head>
 
 <body>
@@ -60,7 +60,7 @@
     <div id="loader">
         <div>
             <h1 class="subtitle" id="colod2">Mi Baby Shower</h1>
-            <h1 class="title" id="colod2">Eizo Alessandro</h1>
+            <h1 class="title" id="colod2" style="padding-block: 20px;">Ezio Alessandro</h1>
         </div>
         <div class="loader1">
             <img src="./assets/lazo2.webp" alt="Rosa decorativa" class="decorative-rose reveal active">
@@ -330,23 +330,105 @@
     </div>
 
     <section class="section">
-        <h1 class="subtitle reveal" id="jireh">Eizo Alessandro</h1>
-        <p class="title reveal-left"> ¡Mi Baby Shower!</p>
+        <p class="title reveal-left" style="padding-block: 20px; font-size: 3.5em; margin-bottom: -80px;"> ¡Mi Baby
+            Shower!</p>
+        <h1 class="subtitle reveal" id="jireh" style="margin-bottom: 15px;">Ezio Alessandro</h1>
         <img src="assets/1.png" alt="Pareja tomados de la mano" class="quote-image fra image-reveal" id="BW" />
         <img src="assets/2.jpg" alt="Pareja tomados de la mano" class="quote-image fra image-reveal" id="BW" />
         <p class="subtitle reveal-left">TU PRESENCIA ES ALTAMENTE APRECIADA EN ESTE MOMENTO TAN ESPECIAL.
         </p>
-        <p class="subtitle reveal-left" style="margin-bottom: 0px;">26 de julio, 2025. <br>4:00PM</p>
-        <div id="countdown" class="subtitle reveal-left"></div>
+        <p class="subtitle reveal-left" style="margin-bottom: 0px;">26 de julio, 2025. <br>6:00PM</p>
+        <div id="countdown-container" class="subtitle reveal-left">
+            <div id="countdown-numbers">
+                <span id="cd-days" class="cd-number">00</span>
+                <span id="cd-hours" class="cd-number">00</span>
+                <span id="cd-minutes" class="cd-number">00</span>
+                <span id="cd-seconds" class="cd-number">00</span>
+            </div>
+            <div id="countdown-labels">
+                <span class="cd-label">días</span>
+                <span class="cd-label">horas</span>
+                <span class="cd-label">min</span>
+                <span class="cd-label">seg</span>
+            </div>
         </div>
+        <style>
+            #countdown-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background: linear-gradient(135deg, #89d5f1 80%, #3f3f80 100%);
+                border-radius: 60px 60px 40px 40px / 80px 80px 30px 30px;
+                padding: 28px 32px 18px 32px;
+                margin: 30px auto 10px auto;
+                max-width: 350px;
+                box-shadow: 0 6px 24px rgba(23, 14, 83, 0.13);
+                border: 2px solid #fff;
+            }
+
+            #countdown-numbers {
+                display: flex;
+                gap: 18px;
+                justify-content: center;
+                margin-bottom: 8px;
+            }
+
+            .cd-number {
+                background: #fff;
+                color: #3f3f80;
+                font-size: 2.2em;
+                font-weight: bold;
+                border-radius: 18px 18px 12px 12px / 28px 28px 10px 10px;
+                min-width: 48px;
+                min-height: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 2px 8px rgba(137, 213, 241, 0.15);
+                margin: 0 2px;
+                letter-spacing: 1px;
+            }
+
+            #countdown-labels {
+                display: flex;
+                gap: 18px;
+                justify-content: center;
+                margin-top: 0;
+            }
+
+            .cd-label {
+                color: #fff;
+                font-size: 1em;
+                font-weight: 500;
+                text-align: center;
+                min-width: 48px;
+                letter-spacing: 0.5px;
+                text-shadow: 0 1px 4px #3f3f8033;
+            }
+
+            @media (max-width: 500px) {
+                #countdown-container {
+                    max-width: 95vw;
+                    padding: 18px 6vw 10px 6vw;
+                }
+
+                .cd-number,
+                .cd-label {
+                    min-width: 36px;
+                    font-size: 1.1em;
+                }
+            }
+        </style>
         <script>
+            function pad(n) { return n < 10 ? '0' + n : n; }
             function updateCountdown() {
-                const targetDate = new Date("jul 26, 2025 16:00:00").getTime();
+                const targetDate = new Date("jul 26, 2025 18:00:00").getTime();
                 const now = new Date().getTime();
                 const difference = targetDate - now;
 
                 if (difference <= 0) {
-                    document.getElementById("countdown").innerHTML = "¡Ya comenzó la celebración!";
+                    document.getElementById("countdown-numbers").innerHTML = '<span style="color:#fff;font-size:1.2em;">¡Ya comenzó la celebración!</span>';
+                    document.getElementById("countdown-labels").style.display = "none";
                     return;
                 }
 
@@ -355,18 +437,18 @@
                 const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-                document.getElementById("countdown").innerHTML =
-                    `${days} días ${hours}h ${minutes}m ${seconds}s`;
+                document.getElementById("cd-days").textContent = pad(days);
+                document.getElementById("cd-hours").textContent = pad(hours);
+                document.getElementById("cd-minutes").textContent = pad(minutes);
+                document.getElementById("cd-seconds").textContent = pad(seconds);
             }
-
-            updateCountdown(); // Ejecuta al cargar
-            setInterval(updateCountdown, 1000); // Actualiza cada segundo
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
         </script>
-        <div id="countdown" class="subtitle reveal-left"></div>
     </section>
 
     <div class="card">
-        <h1 class="title reveal">¡Eizo Alessandro!</h1>
+        <h1 class="title reveal">¡Ezio Alessandro!</h1>
         <p class="subtitle reveal-left">
             Cada día nos despertamos felices, sabiendo que pronto estarás en nuestros brazos.
         </p>
@@ -380,14 +462,15 @@
         <div class="video">
             <div>
                 <video src="assets/video.mp4" alt="Heidi sonriente" id="lu" class="quote-image fra image-reveal"
-                    controls style="max-width:100%;border-radius:16px;"></video>
+                    controls style="max-width:100%;border-radius:16px;" preload="metadata" playsinline
+                    poster="assets/video-poster1.jpg"></video>
                 <video src="assets/video2.mp4" alt="Heidi sonriente" id="lu" class="quote-image fra image-reveal"
-                    controls style="max-width:100%;border-radius:16px;"></video>
+                    controls style="max-width:100%;border-radius:16px;" preload="metadata" playsinline
+                    poster="assets/video-poster2.jpg"></video>
             </div>
         </div>
     </div>
-
-    <img src="./assets/2.gif" alt="Rosa decorativa" id="di" class="decorative-rose reveal" />
+    <h1 class="subtitle reveal mine" style="text-align: center; text-transform: uppercase;"><span style="font-weight: bold;">Es<br>un<br>¡niño!</span></h1>
     <div class="video">
         <img src="assets/bebe.jpg" alt="Pareja tomados de la mano" class="quote-image fra image-reveal" id="BW" />
     </div>

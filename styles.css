@@ -7,6 +7,20 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'TimesNRSeven';
+  src: url('./Times\ NR\ Seven\ MT\ Std\ Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.mine {
+  font-size: 2.5em!important;
+  line-height: 45px;
+  margin-block: 45px;
+}
+
+
 a[href^="tel"] {
   pointer-events: none;
   cursor: default;
@@ -73,7 +87,7 @@ body {
 }
 
 #jireh {
-  font-size: 4em;
+  font-size: 3.5em;
   margin-block: 55px;
   margin-bottom: -10px;
 }
@@ -119,7 +133,7 @@ body {
 }
 
 .subtitle {
-  font-family: "Cinzel", serif;
+  font-family: 'TimesNRSeven', "Cinzel", serif;
   font-size: 24px;
   color: #333076;
   margin-bottom: 40px;
@@ -545,9 +559,9 @@ footer {
 }
 
 #rana {
-  width: 186px;
+  width: 350px;
   margin: auto 0px auto 0px;
-  margin-bottom: -50px;
+  margin-bottom: -90px;
   z-index: 2;
 }
 
@@ -674,36 +688,35 @@ footer > p {
   animation: sparkle 3s infinite ease-in-out;
   opacity: 0.7;
 }
+
 .card {
-  background-color: #fdfdfd70;
+  background: url("./assets/covercard.jpg") repeat;
+  background-size: contain;
   border-radius: 20px;
   padding: 24px;
   max-width: 400px;
-  margin: 16px;
+  margin: 16px auto;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   border: 3px solid #b06e06;
   position: relative;
   overflow: hidden;
   animation: fadeInUp 1s ease;
-  margin: auto;
   color: #b06e06;
+  backdrop-filter: blur(2px) brightness(1.08);
+  /* Optional: add a semi-transparent overlay for readability */
 }
 
-#car {
-  width: 300px;
-  margin-right: 15%;
-  
-}
-
+/* Overlay for readability */
 .card::before {
   content: "";
   position: absolute;
-  top: -60px;
-  right: -60px;
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle at center, #512d91 0%, transparent 70%);
-  opacity: 0.1;
+  inset: 0;
+  background: rgba(253, 253, 253, 0.44);
+  z-index: 0;
+  pointer-events: none;
+}
+.card {
+  position: relative;
 }
 
 .card h1 {
